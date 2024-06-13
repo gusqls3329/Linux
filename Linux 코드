@@ -1,0 +1,100 @@
+설치 상태에 따라 사용이 불가능한 명령어가 있을 수 있음
+ 
+
+1. 디렉토리 및 경로 생성
+
+mkdir dir{A,B,C} : 현위치에 dirA, dirB, dirC 라는 각각의 디렉토리를 생성
+touch dir{A,B,C}/file{X,Y,Z} : dirA, dirB, dirC 각각의 디렉토리 안에 X,Y,Z 라는 파일을 생성
+touch file{A,B,C,D} : 현위치에 A,B,C,D 각각의 파일 생성
+ls -F ./dirA dirB dirC : dirA, dirB, dirC 디렉토리 안에 있는 파일 검색
+* ls -F 라면 현위치의 파일 및 디렉토리가 검색이 됨
+
+
+
+ 
+
+2. CLI구분
+
+1) CLI : 글자를 입력하여 컴퓨터에 명령을 내리는 방식
+
+Command	내용	실행 결과
+uname	시스템 정보	
+
+date	현재 시간
+cal	달력 (calendar)
+clear	터미널 초기화(정리)
+- cal 5 1998 : 원하는 연월의 달력을 볼 수 있다.
+
+2) uname
+
+Command	내용	 
+uname -a	버전 릴리즈, cpu아키텍쳐 등 모든 시스템 정보 출력	
+
+uname -s	운영체제 이름만
+uname -r	버전 릴리즈
+uname -sr	-s, -r 이 같이 나옴
+ 
+
+3) ; : 명령어를 한줄로 독립적으로 실행 가능
+
+date; uname -a	
+
+ 
+
+4) sleep [원하는 시간(초)]: 멈추기
+
+sleep [원하는 시간(초)] : 터미널을 잠시 멈출 수 있다. 이 동안에는 어떠한 명령어도 인식 못한다.	
+
+Ctrl + C : 실행 취소해 탈출할 수 있다.
+ 
+
+ 
+
+2. 디렉토리 작업
+
+1) 디렉토리 생성
+
+mkdir –p /test : 최상위 디렉토리('/')에 'test' 디렉토리 생성
+cd /test : 내가 보고있는 위치를 test위치로 변경
+pwd : 현재 위치 출력 : test가 나와야함
+*cd / test  : 현재 위치를 /test 디렉토리로 변경하는 것이며, 파일, 디렉토리를 /test 디렉토리 안으로 이동시키는 것은 아님
+
+ 
+
+2) 파일 생성
+
+cat > file1
+Hello, Linux <ctrl + d> : Hello, Linux라는 내용을 가진 file1이 생성
+cat file1 : file1의 내용 출력​
+
+위 코드의 결과물
+3) 하위 목록 보기
+
+- ls -R : 현위치의 디렉토리와 파일 그 하위 디렉토리와 하위 디렉토리가 포함한 파일을 가지고 있다.
+
+
+ 
+
+- 현재 디렉토리가 /home/user라고 가정했을때 
+
+ls -R : 현재 디렉토리 (/home/user)와 그 하위 디렉토리들의 내용을 표시
+
+ls  -R 의 결과값
+ls -R [디렉토리명]  : 지정한 디렉토리 /home/user/dir2와 그 하위 디렉토리의 내용을 나열
+
+ls -R [디렉토리명] 의 결과값
+4) 파일의 유형(타입) 알기
+
+코드	결과값
+file dirA : 파일의 유형(타입)을 확인	
+
+file /var/log/maillog : 파일의 유형을 확인	
+
+file /bin/uname : 파일의 유형을 확인	
+
+ 
+
+3. 파일에 내용 추가
+
+echo "Hello from file1" > file1.txt : file1.txt에는 Hello from file1이라는 문구 입력
+ 
