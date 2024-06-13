@@ -1,0 +1,38 @@
+1. cd와 cd~
+- cd [디렉토리] : 디렉토리로 이동
+- cd : 사용자의 홈 디렉토리로 이동
+- cd ~ : 사용자의 홈 디렉토리로 이동
+* 사용자의 홈보다 상위단계인 홈(최상위)로 이동하는 방법 : cd /home
+
+- 틀린 답 : cd home : 현재 작업 디렉터리 내 홈 디렉터리로 가는것이기 때문에 상위 홈 디렉토리라 갈  수 없다
+ 
+2. 숨김 처리된 파일을 포함한 모든 파일 보기 : ls -al
+- 틀린 답 : ls -la
+
+3. rm -r로도 디렉토리를 삭제 할 수 없을 경우 : rm -rf를 사용해 강제 삭제를 해줘야함 (다만, 삭제 확인 메시지가 뜨지 않아서 주의해야함)
+
+4. 3번 방법으로도 삭제가 안되거나 관리자 구너한으로 삭제를 해도 될 경우 :  sudo rm [디렉토리명] :  관리자 권한으로 실행되므로 신중하게 사용해야 함
+
+5. ls -F : 각 파일 및 디렉터리의 종류를 구분할 수 있다 
+
+fileA
+fileB*
+dirA/
+dirB/
+link_to_file@
+socket=
+pipe|
+fileA는 일반 파일을 나타냅니다.
+fileB*는 실행 파일을 나타냅니다.
+dirA/와 dirB/는 각각 디렉터리를 나타냅니다.
+link_to_file@는 심볼릭 링크를 나타냅니다.
+socket=는 소켓 파일을 나타냅니다.
+pipe|는 FIFO를 나타냅니다.
+
+6. 중괄호 확장 : 여러 디렉터리 안에 여러 파일을 한 번에 생성하는 명령어
+touch dir{A,B,C}/file{X,Y,Z} :  dirA, dirB, dirC 디렉터리 안에 각각 fileX, fileY, fileZ 파일이 생성
+ 
+7. 위치차이
+
+- touch dir{A,B,C}/file{X,Y,Z} : dirA, dirB, dirC안에 fileX, fileY, fileZ가 생성됨
+- touch file{A,B,C,D} : fileA,B,C,D는 각각 현 위치에 생성됨
